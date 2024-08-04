@@ -1,0 +1,57 @@
+/* Styles for the backdrop */
+.backdrop {
+    /* display: none; Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    /* Black background with opacity */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    flex-direction: column;
+    /* Center vertically */
+}
+
+/* Flexbox for centering the modal */
+.modal {
+    background: white;
+    padding: 2rem 5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    /* Width of the modal */
+    text-align: center;
+    /* Center the text */
+}
+.modal-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.assigned-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.deadline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
