@@ -1,37 +1,5 @@
-/* Styles for the backdrop */
-.backdrop {
-    /* display: none; Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    /* Black background with opacity */
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    flex-direction: column;
-    /* Center vertically */
-}
-
-/* Flexbox for centering the modal */
-.modal {
-    background: white;
-    padding: 2rem 5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    width: 300px;
-    /* Width of the modal */
-    text-align: center;
-    /* Center the text */
-}
-.modal-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.modal-background {
+    background-color: transparent;
 }
 .name {
     display: flex;
@@ -59,11 +27,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
-.status input {
+.status input{
     margin: 5px;
     padding: 0px
 }
+
 .username {
     display: flex;
     flex-direction: row;

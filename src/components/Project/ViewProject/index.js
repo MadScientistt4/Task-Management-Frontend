@@ -33,8 +33,7 @@ export default function ViewProject() {
   const fetchTasksInProject = async () => {
     try {
       const res = await axios.get(`${url}?${params}`);
-      console.log(res.data); // Log the response to inspect its structure
-
+      console.log(res.data); 
       if (res.data && Array.isArray(res.data.data)) {
         const tasks = res.data.data;
         setData(tasks);
@@ -71,12 +70,19 @@ export default function ViewProject() {
 
   return (
     <div className='task-container'>
-      <h1>Task Board</h1>
-      
-      <button onClick={handleAddTask} className='addButton'>Add Task</button>
+      <h1 className='title' style={{margin: '20px'}}>Task Board</h1>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <button
+          onClick={handleAddTask}
+          className='button is-success'
+          style={{margin: '10px'}}
+        >
+          Add Task
+        </button>
+      </div>
 
-      {modalOn && <AddTask setModal={setModal} fetchTasksInProject={fetchTasksInProject}/>}
-      {viewModal && <ViewTask setModal={setViewModal} item={task} fetchTask={fetchTasksInProject}/>}
+      {modalOn && <AddTask modalOn={modalOn} setModal={setModal} fetchTasksInProject={fetchTasksInProject} />}
+      {viewModal && <ViewTask modalOn={viewModal} setModal={setViewModal} item={task} fetchTask={fetchTasksInProject} />}
 
       <div className='all-tasks'>
         {Object.keys(statusData).map((key) => (
@@ -85,19 +91,19 @@ export default function ViewProject() {
               <h2>{key}</h2>
             </div>
             {statusData[key].map((item, i) => (
-              <div className='project-task-item' onClick={() => handleViewTask(item)}> 
+              <div className='project-task-item' onClick={() => handleViewTask(item)}>
 
                 <div className='project-task-item-top' key={`task-${i}`}>
-                    <div className='project-task-name'>
+                  <div className='project-task-name'>
                     <h3>{item.task_title}</h3>
-                    </div>
-                    <div className='task-assigned-user'>
+                  </div>
+                  <div className='task-assigned-user'>
                     <p>{item.task_assigned_user}</p>
-                    </div>
+                  </div>
                 </div>
 
-                <div className='task-deadline'> 
-                    <p>{moment(item.task_deadline).format('MMMM Do YYYY')}</p>
+                <div className='task-deadline'>
+                  <p>{moment(item.task_deadline).format('MMMM Do YYYY')}</p>
                 </div>
 
               </div>

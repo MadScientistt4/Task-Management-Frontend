@@ -30,9 +30,9 @@ export default function Project() {
 
   return (
     <div className='project-container'>
-      <button className="button is-success" onClick={()=>handleAddProject()}>Create Project</button>
+      <button className="button is-success is-outlined" onClick={()=>handleAddProject()}>Create Project</button>
       {
-        modalOn && <AddProject setModal={setModal} fetchProjects={fetchProjects}/> 
+        modalOn && <AddProject modalOn={modalOn} setModal={setModal} fetchProjects={fetchProjects}/> 
       }
       {
         data.map((item, i) => (
@@ -44,7 +44,7 @@ export default function Project() {
               <p key={`desc-${i}`}>{item.project_description}</p> 
              </div>        
             <div className='view-project'>
-              <a href={`projects/${item.project_id}`}> View Project</a>
+              <a className='has-text-primary has-text-weight-bold' href={`projects/${item.project_id}`}> View Project</a>
               </div>
 
           </div>

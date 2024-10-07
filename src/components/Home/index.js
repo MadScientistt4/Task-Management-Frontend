@@ -31,9 +31,8 @@ export default function Home() {
 
   return (
     <div className='tasks-container'>
-      <h2 className='title is-2'>My Tasks</h2>
-      
-      {modalOn && <ViewTask setModal={setModal} item={task} fetchTask={fetchUserTask}/>}
+      <h2 className='title is-'>My Tasks</h2>
+      {modalOn && <ViewTask modalOn={modalOn} setModal={setModal} item={task} fetchTask={fetchUserTask}/>}
       {data.map((item, i) => (
         <div key={i} className="task-item box" onClick={() => handleViewTask(item)}>
           <div>
